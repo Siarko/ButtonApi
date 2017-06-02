@@ -31,7 +31,7 @@ Adidtionally, all above methods return button object so they can be chained eg:
 ### Other api methods
 - `button.create(text)` - returns new button object; `text` parameter is optional
 - `button.setMonitor(handle)` - sets handle to connected advanced monitor. (Handle is peripheral.wrap())
-- `button.await(button, button1, ...)` - draws given buttons and awaits for monitor click. after click ends execution, regardless if click targeted any button.  
+- `button.await(button, button1, ...)` - draws given buttons and awaits for monitor click. After click, ends execution, regardless if click hit any button.  
 Buttons can be supplied one after:  
 `button.await(button1, button2, button3, ...)`  
 Or in form of a table:  
