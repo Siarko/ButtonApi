@@ -6,7 +6,7 @@ Creates easy way to create clickable buttons on advanced monitors in computercra
 
 ### Basic usage:
 
- 1. include api in your file by `os.loadApi("button")`  
+ 1. include api in your file by `os.loadAPI("button")`  
  2. set monitor you want to use: `button.setMonitor(handle)`  
  3. Create button: `myButton = button.create("My new button")`  
  4. Set position: `myButton.setPos(1,1)`  
