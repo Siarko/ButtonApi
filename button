@@ -45,7 +45,7 @@ function create(text)
 	y = 1,
 	w = 0,
 	h = 1,
-	text = text or "None",
+	text = tostring(text) or "None",
 	bgcol = colors.lime,
 	blinkCol = colors.red,
 	align = "c",
@@ -55,14 +55,14 @@ function create(text)
   }
   
   if text ~= nil then
-    this.w = #text
+    this.w = #tostring(text)
   end
   
   --setters, return this object
   function this.setText(text, resize)
-    this.text = text
-	if resize and this.w < #text then
-	  this.w = #text
+    this.text = tostring(text)
+	if resize and this.w < #this.text then
+	  this.w = #this.text
 	end
 	return this
   end
@@ -196,14 +196,36 @@ function clearMon()
   _locales.mon.clear()
 end
 
---manage button checks
-function await(array, ...)
-  if arg["n"] ~= 0 then
-    array = {array}
-    for i = 1, arg["n"] do
-      array[#array+1] = arg[i]
-    end
+local function isTable(element)
+  return type(element) == "table"
+end
+
+local function isButton(element)
+  if isTable(element) and element.text ~= nil then
+    return true
   end
+  return false
+end
+
+local function mergeTables(tab1, tab2)
+  for i in pairs(tab2) do
+    tab1[#tab1+1] = tab2[i]
+  end
+end
+
+--manage button checks
+function await(...)
+  array = {}
+  for i in pairs(arg) do
+    if i ~= "n" then
+	  if isTable(arg[i]) and not isButton(arg[i]) then --table of buttons
+	    mergeTables(array, arg[i])
+	  else --single button
+	    array[#array+1] = arg[i]
+	  end
+	end
+  end
+  
   for i in pairs(array) do
     array[i].draw()
   end
