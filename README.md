@@ -44,7 +44,7 @@ Or mixed:
 buttonTable = {button1, button2, button3}
 button.await(buttonTable, button4, button5)
 ```
-In all examples above `button1, button2, etc` means button objects  
+Note: In all examples above `button1, button2, etc` means button objects  
 If some button was clicked:  
 - returns value set by `onClickReturn` on clicked button or
 - executes function set by `onClick` method on clicked button
