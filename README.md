@@ -36,8 +36,13 @@ Buttons can be supplied one after:
 `button.await(button1, button2, button3, ...)`  
 Or in form of a table:  
 ```
-buttons = {button1, button2, button3}
-button.await(buttons)
+buttonTable = {button1, button2, button3}
+button.await(buttonTable)
+```
+Or mixed:  
+```
+buttonTable = {button1, button2, button3}
+button.await(buttonTable, button4, button5)
 ```
 If some button was clicked:  
 - returns value set by `onClickReturn` on clicked button or
