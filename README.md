@@ -1,4 +1,4 @@
-# ComputercraftButtonApi
+ButtonApi
 
 This is a computercraft button api. Coded in OOP fashion.
 
