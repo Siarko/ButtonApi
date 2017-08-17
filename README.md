@@ -2,7 +2,7 @@ ButtonApi
 
 This is a computercraft button api. Coded in OOP fashion.
 
-Creates easy way to create clickable buttons on advanced monitors in computercraft
+Creates easy way to manage clickable buttons on advanced monitors in computercraft
 
 ### Basic usage:
 
