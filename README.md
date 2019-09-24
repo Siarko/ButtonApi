@@ -7,7 +7,7 @@ Creates easy way of managing clickable buttons on advanced monitors in computerc
 ### Basic usage:
 
  1. include api in your file by `os.loadAPI("button")`  
- 2. set monitor you want to use: `button.setMonitor(handle)`  
+ 2. set monitor you want to use: `button.setMonitor(handler)`  
  3. Create button: `myButton = button.create("My new button")`  
  4. Set position: `myButton.setPos(1,1)`  
  5. Set some callback: `myButton.onClick(function() print("CLICK!") end)`  
@@ -31,7 +31,7 @@ Adidtionally, all above methods return button object so they can be chained eg:
 ### Other api methods
 - `button.create(text)` - returns new button object; `text` parameter is optional
 - `button.setMonitor(handle)` - sets handle to connected advanced monitor. (Handle is peripheral.wrap())
-- `button.await(button, button1, ...)` - draws given buttons and awaits for monitor click. After click, ends execution, regardless if click hit any button.  
+- `button.await(button1, button2, ...)` - draws given buttons and awaits for monitor click. After click, ends execution, regardless if click hit any button.  
 Buttons can be supplied one after:  
 `button.await(button1, button2, button3, ...)`  
 Or in form of a table:  
