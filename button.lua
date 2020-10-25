@@ -51,7 +51,7 @@ function create(text)
 	align = "c",
 	active = true,
 	callback = nil,
-	ret = nil
+	ret = nil,
 	textColor = colors.black
   }
   
