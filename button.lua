@@ -51,7 +51,8 @@ function create(text)
 	align = "c",
 	active = true,
 	callback = nil,
-	ret = nil
+	ret = nil,
+	textColor = colors.black
   }
   
   if text ~= nil then
@@ -64,6 +65,11 @@ function create(text)
 	if resize and this.w < #this.text then
 	  this.w = #this.text
 	end
+	return this
+  end
+  
+  function this.setTextColor(color)
+	this.textColor = color
 	return this
   end
   
@@ -156,7 +162,7 @@ function create(text)
 		xpos = this.x
 		t = string.sub(t,1,this.w-3)..".."..string.sub(t,-1)
 	end
-	_locales.mon.setTextColor(colors.black)
+	_locales.mon.setTextColor(this.textColor)
 	local f = string.rep(" ", this.w)
 	if this.active then
 	  _locales.mon.setBackgroundColor(bgcol)
