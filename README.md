@@ -6,7 +6,7 @@ Creates easy way of managing clickable buttons on advanced monitors in computerc
 
 ### Basic usage:
 
- 1. include api in your file by `os.loadAPI("button")`  
+ 1. include api in your file by `os.loadAPI("button.lua")`  
  2. set monitor you want to use: `button.setMonitor(handler)`  
  3. Create button: `myButton = button.create("My new button")`  
  4. Set position: `myButton.setPos(1,1)`  
